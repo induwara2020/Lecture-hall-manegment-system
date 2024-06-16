@@ -1,0 +1,8 @@
+ /* Custom CSS for fixed header */
+ .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Adjust as needed */
+    background-color: #ffffff; /* Background color for the fixed header */
+    border-bottom: 1px solid #dee2e6; /* Border color for the fixed header */
+}
