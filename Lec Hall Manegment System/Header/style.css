@@ -1,0 +1,12 @@
+/* styles.css */
+
+.header {
+    background-color: #343a40; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 10px 0; /* Padding top/bottom 10px, left/right 0 */
+  }
+  
+  .logo img {
+    max-height: 40px; /* Ensure logo doesn't exceed 40px in height */
+  }
+  

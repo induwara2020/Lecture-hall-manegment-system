@@ -1,8 +1,58 @@
- /* Custom CSS for fixed header */
- .sticky-top {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Adjust as needed */
-    background-color: #ffffff; /* Background color for the fixed header */
-    border-bottom: 1px solid #dee2e6; /* Border color for the fixed header */
-}
+/* Custom CSS for table and header */
+.card {
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .card-title {
+    margin-bottom: 0;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .table thead th {
+    background-color: #343a40;
+    color: #fff;
+    border-color: #343a40;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Date and Time Display */
+  .border {
+    border: 2px solid #007bff;
+  }
+  
+  .border-rounded {
+    border-radius: 15px;
+  }
+  
+  

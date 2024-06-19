@@ -3,37 +3,279 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Lecture Hall Management System</title>
+  
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-G+dJ/3t+albc5IjHX0n7fBjXN49XZWcL2tI5Yi9/83+6e+ptl6UD9g3L/JaqE+byJ29Gk5+87v8B0D89gBfMFA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container-fluid bg-light">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none" >
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">Lecture Hall Management System</span>
-        </a>
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a href="#" class="nav-link" aria-current="page">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Features</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">FAQs</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">About</a>
-            </li>
-        </ul>
-    </header>
-</div>
+  <!-- Header Section -->
+  <header class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                Lecture Hall Management System
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQs</a>                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
 
+  <!-- Main Content Section -->
+  <div class="container mt-4">
+    <!-- Date and Time Display -->
+    <div class="border rounded p-3 mb-4">
+      <h5 class="text-center mb-3">Today's Date and Time</h5>
+      <div class="text-center">
+        <p class="fs-5" id="currentDateTime"></p>
+      </div>
+    </div>
+
+    <!-- Lectures Card -->
+    <div class="card">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h3 class="card-title mb-0">Today's Lectures</h3>
+        <button type="button" class="btn btn-info btn-sm" id="nextDayButton">View Next Day Lectures</button>
+      </div>
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="searchButton" id="searchInput">
+          <button class="btn btn-outline-secondary" type="button" id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col">What to Do</th>
+                <th scope="col">Time</th>
+                <th scope="col">Venue</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="lectureTableBody">
+              <tr>
+                <td>Advance Networking</td>
+                <td>8:00 AM</td>
+                <td>SF 01</td>
+                <td>
+                  <button class="btn btn-outline-primary btn-mark" data-toggle="button" aria-pressed="false" autocomplete="off">Mark as</button>
+                  <button class="btn btn-outline-danger btn-delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Introduction to Networking</td>
+                <td>10:00 AM</td>
+                <td>LGF 08</td>
+                <td>
+                  <button class="btn btn-outline-primary btn-mark" data-toggle="button" aria-pressed="false" autocomplete="off">Mark as</button>
+                  <button class="btn btn-outline-danger btn-delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Cryptography</td>
+                <td>4:00 PM</td>
+                <td>SF 02</td>
+                <td>
+                  <button class="btn btn-outline-primary btn-mark" data-toggle="button" aria-pressed="false" autocomplete="off">Mark as</button>
+                  <button class="btn btn-outline-danger btn-delete"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <button type="button" class="btn btn-success me-md-2 mb-2" data-bs-toggle="modal" data-bs-target="#scheduleModal">Schedule a Lecture</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Schedule Lecture Modal -->
+  <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="scheduleModalLabel">Schedule a Lecture</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="lectureForm">
+            <div class="mb-3">
+              <label for="lectureName" class="form-label">What to Do</label>
+              <input type="text" class="form-control" id="lectureName" required>
+            </div>
+            <div class="mb-3">
+              <label for="lectureTime" class="form-label">Time</label>
+              <input type="text" class="form-control" id="lectureTime" required>
+            </div>
+            <div class="mb-3">
+              <label for="lectureVenue" class="form-label">Venue</label>
+              <input type="text" class="form-control" id="lectureVenue" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Lecture</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-8B0/22Cmt7lSSNJ3erzP4lC4tz3wzWZ/wyV4EaMMmehDt0F9C66T5IO5LE8g8q5UB7yxFuM6Mfj6WfBt6JtXLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    // Update current date and time dynamically
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      document.getElementById('currentDateTime').textContent = now.toLocaleDateString('en-US', options);
+    }
+
+    // Call updateDateTime every second
+    setInterval(updateDateTime, 1000);
+
+    // Initial call to set date and time immediately
+    updateDateTime();
+
+    // Handle form submission to add lecture
+    document.getElementById('lectureForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const lectureName = document.getElementById('lectureName').value;
+      const lectureTime = document.getElementById('lectureTime').value;
+      const lectureVenue = document.getElementById('lectureVenue').value;
+
+      // Add new row to the table
+      const tableBody = document.getElementById('lectureTableBody');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${lectureName}</td>
+        <td>${lectureTime}</td>
+        <td>${lectureVenue}</td>
+        <td>
+          <button class="btn btn-outline-primary btn-mark" data-toggle="button" aria-pressed="false" autocomplete="off">Mark as</button>
+          <button class="btn btn-outline-danger btn-delete"><i class="fas fa-trash"></i></button>
+        </td>
+      `;
+      tableBody.appendChild(newRow);
+
+      // Clear form fields
+      document.getElementById('lectureForm').reset();
+
+      // Close modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('scheduleModal'));
+      modal.hide();
+      
+      // Re-attach event listeners for new buttons
+      attachButtonListeners();
+    });
+
+    // Handle delete button clicks
+    function attachButtonListeners() {
+      document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function() {
+          this.closest('tr').remove();
+        });
+      });
+
+      // Handle mark as completed button clicks
+      document.querySelectorAll('.btn-mark').forEach(button => {
+        button.addEventListener('click', function() {
+          if (this.classList.contains('btn-outline-primary')) {
+            this.classList.remove('btn-outline-primary');
+            this.classList.add('btn-success');
+            this.textContent = 'Completed';
+          } else {
+            this.classList.remove('btn-success');
+            this.classList.add('btn-outline-primary');
+            this.textContent = 'Mark as';
+          }
+        });
+      });
+    }
+
+    // Initial call to attach listeners
+    attachButtonListeners();
+
+    // View next day lectures button click handler
+    document.getElementById('nextDayButton').addEventListener('click', function() {
+      // Clear current table rows
+      const tableBody = document.getElementById('lectureTableBody');
+      tableBody.innerHTML = '';
+
+      // Simulate fetching data for next day lectures (could be from a server-side API)
+      const nextDayLectures = [
+        { name: 'Advanced Cryptography', time: '9:00 AM', venue: 'SF 02' },
+        { name: 'Data Structures', time: '11:00 AM', venue: 'LGF 08' },
+        { name: 'Machine Learning', time: '2:00 PM', venue: 'SF 01' }
+      ];
+
+      // Populate table with next day lectures
+      nextDayLectures.forEach(lecture => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${lecture.name}</td>
+          <td>${lecture.time}</td>
+          <td>${lecture.venue}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-mark" data-toggle="button" aria-pressed="false" autocomplete="off">Mark as</button>
+            <button class="btn btn-outline-danger btn-delete"><i class="fas fa-trash"></i></button>
+          </td>
+        `;
+        tableBody.appendChild(newRow);
+      });
+
+      // Re-attach event listeners for new buttons
+      attachButtonListeners();
+    });
+
+    // Search functionality
+    document.getElementById('searchButton').addEventListener('click', function() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      document.querySelectorAll('#lectureTableBody tr').forEach(row => {
+        const cells = row.querySelectorAll('td');
+        const [name, time, venue] = cells;
+        if (name.textContent.toLowerCase().includes(searchTerm) || 
+            time.textContent.toLowerCase().includes(searchTerm) || 
+            venue.textContent.toLowerCase().includes(searchTerm)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
