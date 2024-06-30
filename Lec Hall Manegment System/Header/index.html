@@ -1,40 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lecture Hall Management</title>
-  <!-- Link to your custom CSS file -->
-  <link rel="stylesheet" href="styles.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Hall Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".hamburger").click(function(){
+			   $(".wrapper").toggleClass("collapse");
+			});
+		});
+	</script>
 </head>
 <body>
-  
-  <header class="header">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col">
-          <!-- University Logo -->
-          <div class="logo">
-            <img src="university-logo.png" alt="University Logo">
+    <div class="wrapper">
+        <div class="top_navbar">
+          <div class="hamburger" onclick="toggleSidebar()">
+             <div class="one"></div>
+             <div class="two"></div>
+             <div class="three"></div>
+          </div>
+          <div class="top_menu">
+             <div class="logo">
+                 <img src="jpr-logo.png" alt="University Logo">
+             </div>
+             <div class="site-name">
+                 <h1>Lecture Hall Management System</h1>
+                 <h2>Faculty of Technology</h2>
+             </div>
+             <div class="nav-icons">
+                  <div class="notification">
+                     <a href="#" class="notification-icon"><i class="fa fa-bell"></i></a>
+                      <div class="notification-dropdown">
+                         <div class="notification-header">
+                               <span>Notifications</span>
+                               <span class="notification-settings">
+                                  <i class="fa fa-check"></i>
+                               </span>
+                         </div>
+                         <div class="notification-body">
+                             <p>No new notifications</p>
+                         </div>
+                         <div class="notification-footer">
+                             <a href="#">See all</a>
+                         </div>
+                      </div>
+                  </div>
+                  <div class="user-profile">
+                      <a href="#" class="user-icon"><i class="fa fa-user"></i></a>
+                      <div class="dropdown-content">
+                          <a href="#">My Profile</a>
+                          <a href="#">Log out</a>
+                      </div>
+                  </div>
+             </div>
           </div>
         </div>
-        <div class="col text-right">
-          <!-- Account Section (Example using Font Awesome icons) -->
-          <a href="#" class="text-white mr-3"><i class="fas fa-user-circle mr-1"></i> My Account</a>
-          <!-- Notification Section (Example using Font Awesome icons) -->
-          <a href="#" class="text-white"><i class="fas fa-bell mr-1"></i> Notifications</a>
-        </div>
-      </div>
+        
+        <aside id="sidebar" class="sidebar">
+          <ul>
+              <li><a href="#" class="active">
+                <span class="title">Dashboard</span>
+                </a></li>
+              <li><a href="#">
+                <span class="title">Home</span>
+                </a></li>
+              <li><a href="#">
+                <span class="title">About</span>
+                </a></li>
+              <li><a href="#">
+                <span class="title">Settings</span>
+                </a></li>
+              <li><a href="#">
+                <span class="title">Contact Us</span>
+                </a></li>
+          </ul>
+        </aside>
+        <main id="content" class="content">
+            <h1>Hello</h1> </br>This is the official website for manage lecture halls at the Faculty of Technology of University of Sri Jayewardenepura.
+        </main>
     </div>
-  </header>
-
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer>
+        <p>&copy; 2024 University of Sri Jayewardenepura | All rights reserved</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
